@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Aluno</title>
+  <style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f4ff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px 30px;
+    width: 100%;
+    max-width: 400px;
+  }
+  h1 {
+    text-align: center;
+    color: #2563eb;
+  }
+  label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  input, select, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+  }
+  button {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 15px;
+  }
+  button:hover {
+    background-color: #1d4ed8;
+  }
+  #msgAluno, #msgGerente {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #2563eb;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <h1>Cadastro de Aluno</h1>
+    <form id="formAluno">
+      <label>Nome:<input type="text" name="nome" required></label>
+      <label>Idade:<input type="number" name="idade" required></label>
+      <label>Email:<input type="email" name="email" required></label>
+      <label>Curso:<input type="text" name="curso" required></label>
+      <label>Período:
+        <select name="periodo">
+          <option value="">Selecione</option>
+          <option>1º</option>
+          <option>2º</option>
+          <option>3º</option>
+          <option>4º</option>
+        </select>
+      </label>
+      <label>Telefone:<input type="tel" name="telefone"></label>
+      <label>Observações:<textarea name="obs" rows="3"></textarea></label>
+      <button type="submit">Cadastrar</button>
+      <button type="reset">Limpar</button>
+    </form>
+    <div id="msgAluno"></div>
+  </div>
+  <script>
+    document.getElementById('formAluno').addEventListener('submit', function(e){
+      e.preventDefault();
+      document.getElementById('msgAluno').textContent = 'Aluno cadastrado (simulação).';
+      this.reset();
+    });
+  </script>
+</body>
+</html>
